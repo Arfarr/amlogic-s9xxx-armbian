@@ -213,7 +213,7 @@ on:
         options:
           - ophub
           - angel
-          - yourname
+          - Arfarr
 
 env:
   TZ: America/New_York
@@ -314,7 +314,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Rebuild Armbian
-        uses: ophub/amlogic-s9xxx-armbian@main
+        #uses: ophub/amlogic-s9xxx-armbian@main
+        uses: Arfarr/amlogic-s9xxx-armbian@main
         if: ${{ steps.clean.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: armbian
